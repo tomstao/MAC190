@@ -38,5 +38,12 @@ public class Main {
         }  else {
             System.out.println("E1 does not equals E2");
         }
+
+        Even e3 = e.add(e2);
+
+        System.out.println(e3);
+
+        e3 = e3.add(5);
+        System.out.println(e3);
     }
 }
