@@ -33,6 +33,10 @@ public class Main {
         System.out.println(e2);
         //compare the two Even objects if they are the same.
         boolean equality = e.equals(e2);
-        System.out.println(equality);
+        if (equality) {
+            System.out.println("E1 equals E2");
+        }  else {
+            System.out.println("E1 does not equals E2");
+        }
     }
 }
