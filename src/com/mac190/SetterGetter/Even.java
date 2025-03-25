@@ -22,7 +22,7 @@ one and adds E.a to it and returns it.
 public class Even {
 
     public Even(int num) {
-        this.num = num;
+        this.setNum(num);
     }
     public Even() {
     }
