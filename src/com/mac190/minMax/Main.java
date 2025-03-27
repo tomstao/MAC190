@@ -4,6 +4,7 @@ public class Main {
     public static void main(String[] args) {
         minMax test = new minMax(23,50);
         minMax test2 = new minMax(43,22);
+        minMax test3 = new minMax(43,22);
         minMax methodTest = new minMax(13,40);
         minMax defaultObject = new minMax();
         System.out.println("Test default constructor:" + defaultObject);
@@ -23,8 +24,8 @@ public class Main {
         System.out.println("Test input 50(large) and 10(small):" + largeAndSmall);
         System.out.println("*".repeat(80) + "\n");// separating line
 
-        minMax equals = new minMax(34,34);
-        System.out.println("Test input 34 and 34(two equal numbers):" + equals);
+        minMax sameInput = new minMax(34,34);
+        System.out.println("Test input 34 and 34(two equal numbers):" + sameInput);
         System.out.println("*".repeat(80) + "\n");// separating line
 
         System.out.println("Test setMin and test setMax:");
@@ -34,6 +35,10 @@ public class Main {
         System.out.println("Object before setMax(input 13): " + methodTest);
         methodTest.setMax(13);
         System.out.println("Object after setMax: " + methodTest);
+        System.out.println("Test for equals method:");
+        System.out.println("Is object1(input 43,22) equal to object2(input 43,22): " + (test3.equals(test2) ? "Yes" : "No"));
+        System.out.println("Is object1(input 23,50) equal to object2(input 43,22): " + (test.equals(test2) ? "Yes" : "No"));
+
         System.out.println("*".repeat(80) + "\n");// separating line
 
 
