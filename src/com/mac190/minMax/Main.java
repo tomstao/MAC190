@@ -1,5 +1,9 @@
 package com.mac190.minMax;
+/*
+@author Tao Su
 
+This is a Main class for testing minMac class.
+ */
 public class Main {
     public static void main(String[] args) {
         minMax test = new minMax(23,50);
