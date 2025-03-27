@@ -10,6 +10,11 @@ public class Main {
 
         System.out.println("*".repeat(80) + "\n");// separating line
 
+        minMax oneInput = new minMax(74);
+        System.out.println("Test oneInput constructor(input 74):" + oneInput);
+        System.out.println("*".repeat(80) + "\n");// separating line
+
+
         minMax smallAndLarge = new minMax(25,30);
         System.out.println("Test input 25(small) and 30(large):" + smallAndLarge);
         System.out.println("*".repeat(80) + "\n");// separating line
