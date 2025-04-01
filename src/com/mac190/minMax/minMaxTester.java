@@ -4,7 +4,7 @@ package com.mac190.minMax;
 
 This is a Main class for testing minMac class.
  */
-public class Main {
+public class minMaxTester {
     public static void main(String[] args) {
         minMax test = new minMax(23,50);
         minMax test2 = new minMax(43,22);
