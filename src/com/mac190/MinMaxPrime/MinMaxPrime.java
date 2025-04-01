@@ -8,8 +8,8 @@ In addition add setters and getters for Prime.
  */
 
 public class MinMaxPrime {
-    private Prime min = new Prime();
-    private Prime max = new Prime();
+    private final Prime min = new Prime();
+    private final Prime max = new Prime();
 
     MinMaxPrime() {
 
@@ -42,11 +42,13 @@ public class MinMaxPrime {
         setBoth(min.getPrime(), input);
     }
 
-    public Prime getMin() {
-        return min;
-    }
+    public int getMin() {return min.getPrime();}
 
-    public Prime getMax() {
+    public Prime getMinPrime() { return min; }
+
+    public int getMax() { return max.getPrime(); }
+
+    public Prime getMaxPrime() {
         return max;
     }
 
@@ -59,19 +61,19 @@ public class MinMaxPrime {
         if(other == null || this.getClass() != other.getClass()) {
             return false;
         }
-        return min == other.getMin() && max == other.getMax();
+        return min == other.getMinPrime() && max == other.getMaxPrime();
     }
 
     public MinMaxPrime add(int input) {
-        return new MinMaxPrime(input + getMin().getPrime(), input + getMax().getPrime());
+        return new MinMaxPrime(input + getMinPrime().getPrime(), input + getMaxPrime().getPrime());
     }
 
     public MinMaxPrime add(MinMaxPrime other) {
-        return new MinMaxPrime(other.getMin().getPrime() + getMin().getPrime(), other.getMax().getPrime() + getMax().getPrime());
+        return new MinMaxPrime(other.getMinPrime().getPrime() + getMinPrime().getPrime(), other.getMaxPrime().getPrime() + getMaxPrime().getPrime());
     }
 
     public MinMaxPrime multiply(int input) {
-        return new MinMaxPrime(input * getMin().getPrime(), input * getMax().getPrime());
+        return new MinMaxPrime(input * getMinPrime().getPrime(), input * getMaxPrime().getPrime());
     }
 
     public static MinMaxPrime add(int input, MinMaxPrime other) {
