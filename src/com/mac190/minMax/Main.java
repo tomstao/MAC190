@@ -60,15 +60,13 @@ public class Main {
         System.out.println("Test multiply by negative:");
         minMax multiplyByNegative = test.multiply(-3);
         System.out.println("Test multiply by negative(-3):" + test +',' + " after:" + multiplyByNegative);
-        System.out.println("Static methods:");
+        System.out.println("*".repeat(20) + "Static methods:");
 
         minMax addIntStatic = minMax.add(10,test);
         System.out.println("Object before adding integer:" + test + ',' + " after adding 10:" + addIntStatic);
-        System.out.println("*".repeat(80) + "\n");// separating line
 
         minMax addObjectStatic = minMax.add(test2,test);
         System.out.println("Object1:" + test +',' + " object2:" + test2 +',' + " after adding these two objects:" + addObjectStatic);
-        System.out.println("*".repeat(80) + "\n");// separating line
 
         minMax multiplyIntStatic = minMax.multiply(3,test);
         System.out.println("Object before multiplication(multiply by 3):" + test +',' + " after:" + multiplyIntStatic);

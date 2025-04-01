@@ -3,7 +3,7 @@ package com.mac190.minMax;
 /*
 Design a class MinMax that has the following properties:
 - two integer member variables min and max, where min should
-always be smaller or equal than max.
+always be smaller or equal than max. ✅
 - Default constructor setting both to 0 ✅
 - constructor that accepts one value and sets both
 to that value ✅
@@ -26,10 +26,10 @@ similar to this plus a to both min and max ✅
 is added to the min of this and max of m is added to the max ✅
 - method MinMax multiply(int a) returns a MinMax object
 with min as the min of this multiplied by a and same for max
-pay attention to the sign of a.
-- implement add methods and multiply method above as static methods
+pay attention to the sign of a. ✅
+- implement add methods and multiply method above as static methods ✅
 
--In a tester, test your class extensively. All methods static and non static
+-In a tester, test your class extensively. All methods static and non static ✅
  */
 public class minMax {
     private int min;
