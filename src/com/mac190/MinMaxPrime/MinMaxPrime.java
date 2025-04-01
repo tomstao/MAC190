@@ -61,19 +61,19 @@ public class MinMaxPrime {
         if(other == null || this.getClass() != other.getClass()) {
             return false;
         }
-        return min == other.getMinPrime() && max == other.getMaxPrime();
+        return min.getPrime() == other.getMin() && max.getPrime() == other.getMax();
     }
 
     public MinMaxPrime add(int input) {
-        return new MinMaxPrime(input + getMinPrime().getPrime(), input + getMaxPrime().getPrime());
+        return new MinMaxPrime(input + getMin(), input + getMax());
     }
 
     public MinMaxPrime add(MinMaxPrime other) {
-        return new MinMaxPrime(other.getMinPrime().getPrime() + getMinPrime().getPrime(), other.getMaxPrime().getPrime() + getMaxPrime().getPrime());
+        return new MinMaxPrime(other.getMin() + getMin(), other.getMax() + getMax());
     }
 
     public MinMaxPrime multiply(int input) {
-        return new MinMaxPrime(input * getMinPrime().getPrime(), input * getMaxPrime().getPrime());
+        return new MinMaxPrime(input * getMin(), input * getMax());
     }
 
     public static MinMaxPrime add(int input, MinMaxPrime other) {
