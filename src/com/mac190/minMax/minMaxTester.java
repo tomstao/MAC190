@@ -71,7 +71,15 @@ public class minMaxTester {
 
         minMax multiplyIntStatic = minMax.multiply(3,test);
         System.out.println("Object before multiplication(multiply by 3):" + test +',' + " after:" + multiplyIntStatic);
-
+        minMax m1 = new minMax(2,8);
+        m1.setMax(-1);
+        m1.setMin(6);
+        minMax m2 = m1.add(3);
+        minMax m3 = m1.add(m2);
+        m3 = m3.multiply(-2);
+        System.out.println(m3);
+        m3 = m2.add(-4).add(m1).add(m3.multiply(-2));
+        System.out.println(m3);
 
 
     }
