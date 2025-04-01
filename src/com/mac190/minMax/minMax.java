@@ -4,26 +4,26 @@ package com.mac190.minMax;
 Design a class MinMax that has the following properties:
 - two integer member variables min and max, where min should
 always be smaller or equal than max.
-- Default constructor setting both to 0
+- Default constructor setting both to 0 ✅
 - constructor that accepts one value and sets both
-to that value
+to that value ✅
 - constructor that accepts two values and sets min
-to the smallest and max to the largest
+to the smallest and max to the largest ✅
 - setter setBoth() that accepts two values,sets
-min to the smallest and max to the largest
+min to the smallest and max to the largest ✅
 - setter setMin that accepts a value. If the value is larger
 than max, then min should be set to the value of
-max and max to the input value, toherwise min is set to the input value
+max and max to the input value, toherwise min is set to the input value ✅
 - setter setMax that accepts a value. If the value
 is smaller than min, then max is set to min and min is
-set to that value. Otherwise set max to the input value
--getters
--toString method returning a string with min and max values
-- equals method
+set to that value. Otherwise set max to the input value ✅
+-getters ✅
+-toString method returning a string with min and max values ✅
+- equals method ✅
 - method MinMax add(int a). returns a MaxMin object
-similar to this plus a to both min and max
+similar to this plus a to both min and max ✅
 - method MinMax add(MinMax m) same above but min of m
-is added to the min of this and max of m is added to the max
+is added to the min of this and max of m is added to the max ✅
 - method MinMax multiply(int a) returns a MinMax object
 with min as the min of this multiplied by a and same for max
 pay attention to the sign of a.
@@ -81,6 +81,9 @@ public class minMax {
     }
 
     public boolean equals(minMax other) {
+        if(other == null || this.getClass() != other.getClass()) {
+            return false;
+        }
         return min == other.getMin() && max == other.getMax();
     }
 
