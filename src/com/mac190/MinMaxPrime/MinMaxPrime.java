@@ -54,7 +54,7 @@ public class MinMaxPrime {
 
     @Override
     public String toString(){
-        return "min= " + min + ", max= " + max;
+        return "min= " + min.getPrime() + ", max= " + max.getPrime();
     }
 
     public boolean equals(MinMaxPrime other) {
