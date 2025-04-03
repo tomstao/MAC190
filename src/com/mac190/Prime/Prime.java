@@ -10,7 +10,7 @@ to the input value. For instance if the input is B, then prime will be set to 11
 - getter
 - setter that sets prime to the closet prime to the input value.
 - toString to return the object as a string
-- equals to compare two Prime objects.
+- equalCoordinate to compare two Prime objects.
  public Prime add(int a) that returns a Prime object as the sum of this and a
  - public Prime add(Prime p) that return an object Prime as the sum of thw two primes this and p. The result has to be a
  prime number.

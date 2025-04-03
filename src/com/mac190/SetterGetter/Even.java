@@ -8,7 +8,7 @@ One private integer member variable num that is even at all times.
 set it to the next even number. (If the input is odd add one to it).
 
 - method String toString return num: itsValue as a string.
--method equals(Even E) returns true if E is the same as this object even and false if not
+-method equalCoordinate(Even E) returns true if E is the same as this object even and false if not
 
 //Do this later
 - method public Even add(int a) this method creates an Even object simular to this

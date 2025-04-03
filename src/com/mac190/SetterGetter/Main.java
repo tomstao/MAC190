@@ -8,7 +8,7 @@ One private integer member variable num that is even at all times.
 set it to the next even number. (If the input is odd add one to it).
 
 - method String toString return num: itsValue as a string.
--method equals(Even E) returns true if E is the same as this object even and false if not
+-method equalCoordinate(Even E) returns true if E is the same as this object even and false if not
 
 //Do this later
 - method public Even add(int a) this method creates an Even object simular to this
@@ -21,7 +21,7 @@ one and adds E.a to it and returns it.
 
 public class Main {
     public static void main(String[] args) {
-        //create an Even object with num equals to 3
+        //create an Even object with num equalCoordinate to 3
         Even e  = new Even();
         e.setNum(3);
         //display it, using the toString()
@@ -34,9 +34,9 @@ public class Main {
         //compare the two Even objects if they are the same.
         boolean equality = e.equals(e2);
         if (equality) {
-            System.out.println("E1 equals E2");
+            System.out.println("E1 equalCoordinate E2");
         }  else {
-            System.out.println("E1 does not equals E2");
+            System.out.println("E1 does not equalCoordinate E2");
         }
 
         Even e3 = e.add(e2);

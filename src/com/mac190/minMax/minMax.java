@@ -19,7 +19,7 @@ is smaller than min, then max is set to min and min is
 set to that value. Otherwise set max to the input value ✅
 -getters ✅
 -toString method returning a string with min and max values ✅
-- equals method ✅
+- equalCoordinate method ✅
 - method MinMax add(int a). returns a MaxMin object
 similar to this plus a to both min and max ✅
 - method MinMax add(MinMax m) same above but min of m

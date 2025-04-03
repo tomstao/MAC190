@@ -39,7 +39,7 @@ public class minMaxTester {
         System.out.println("Object before setMax(input 13): " + methodTest);
         methodTest.setMax(13);
         System.out.println("Object after setMax: " + methodTest);
-        System.out.println("Test for equals method:");
+        System.out.println("Test for equalCoordinate method:");
         System.out.println("Is object1(input 43,22) equal to object2(input 43,22): " + (test3.equals(test2) ? "Yes" : "No"));
         System.out.println("Is object1(input 23,50) equal to object2(input 43,22): " + (test.equals(test2) ? "Yes" : "No"));
         System.out.println("*".repeat(25) + "test getMinPrime()/getMax()(it should be 10/13 ): " + methodTest.getMin() + "/" + methodTest.getMax());

@@ -63,11 +63,11 @@ public class MinMaxPrimeTester {
                 " become 2 if the program work properly):");
         MinMaxPrime timeNegativeStatic = MinMaxPrime.multiply(-10, test1);
         System.out.println(timeNegativeStatic);
-        System.out.println("*".repeat(20) + " equals method test below: ");
+        System.out.println("*".repeat(20) + " equalCoordinate method test below: ");
         MinMaxPrime test4 = new MinMaxPrime(4, 24);
         System.out.println("The value of the object test4 for comparison: " + test4);
-        System.out.println("test1(4,24) equals test4(4,24)? " + (test1.equals(test4) ? "Yes" : "No"));
-        System.out.println("test1(4,24) equals test2(18,9)? " + (test1.equals(test2) ? "Yes" : "No"));
+        System.out.println("test1(4,24) equalCoordinate test4(4,24)? " + (test1.equals(test4) ? "Yes" : "No"));
+        System.out.println("test1(4,24) equalCoordinate test2(18,9)? " + (test1.equals(test2) ? "Yes" : "No"));
 
     }
 }
