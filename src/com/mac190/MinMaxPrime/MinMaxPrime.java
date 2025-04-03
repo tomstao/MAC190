@@ -34,6 +34,14 @@ public class MinMaxPrime {
         }
     }
 
+    MinMaxPrime(Prime input1, Prime input2) {
+        setBoth(input1.getPrime(), input2.getPrime());
+    }
+
+    MinMaxPrime(Prime input) {
+        setBoth(input.getPrime(), input.getPrime());
+    }
+
     public void setMin(int input) {
         setBoth(input, max.getPrime());
     }
@@ -67,7 +75,7 @@ public class MinMaxPrime {
         if (other == null || this.getClass() != other.getClass()) {
             return false;
         }
-        return min.getPrime() == other.getMin() && max.getPrime() == other.getMax();
+        return min.equals(other) && max.equals(other);
     }
 
     public MinMaxPrime add(Prime input) {
