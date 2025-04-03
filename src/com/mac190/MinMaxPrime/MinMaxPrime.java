@@ -16,7 +16,7 @@ public class MinMaxPrime {
     }
 
     MinMaxPrime(int input) {
-        setBoth(input,input);
+        setBoth(input, input);
     }
 
     MinMaxPrime(int input1, int input2) {
@@ -28,40 +28,50 @@ public class MinMaxPrime {
         if (input1 >= input2) {
             max.setPrime(input1);
             min.setPrime(input2);
-        }  else {
+        } else {
             max.setPrime(input2);
             min.setPrime(input1);
         }
     }
 
     public void setMin(int input) {
-        setBoth(input,max.getPrime());
+        setBoth(input, max.getPrime());
     }
 
     public void setMax(int input) {
         setBoth(min.getPrime(), input);
     }
 
-    public int getMin() {return min.getPrime();}
+    public int getMin() {
+        return min.getPrime();
+    }
 
-    public Prime getMinPrime() { return min; }
+    public Prime getMinPrime() {
+        return min;
+    }
 
-    public int getMax() { return max.getPrime(); }
+    public int getMax() {
+        return max.getPrime();
+    }
 
     public Prime getMaxPrime() {
         return max;
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         return "min= " + min.getPrime() + ", max= " + max.getPrime();
     }
 
     public boolean equals(MinMaxPrime other) {
-        if(other == null || this.getClass() != other.getClass()) {
+        if (other == null || this.getClass() != other.getClass()) {
             return false;
         }
         return min.getPrime() == other.getMin() && max.getPrime() == other.getMax();
+    }
+
+    public MinMaxPrime add(Prime input) {
+        return new MinMaxPrime(input.getPrime() + getMin(), input.getPrime() + getMax());
     }
 
     public MinMaxPrime add(int input) {

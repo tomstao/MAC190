@@ -43,7 +43,7 @@ public class MinMaxPrimeTester {
         System.out.println("Test test1 multiply by 10:");
         MinMaxPrime timeTen = test1.multiply(10);
         System.out.println(timeTen);
-        System.out.println("Test test1 multiply by -10(negative multiplier, because prime can't be negative, it will " +
+        System.out.println("Test test1 multiply by -10(negative multiplier, because prime can't be negative,\n" + "it will " +
                 " become 2 if the program work properly):");
         MinMaxPrime testMultiplyByNegative = test1.multiply(-10);
         System.out.println(testMultiplyByNegative);
@@ -58,8 +58,10 @@ public class MinMaxPrimeTester {
         System.out.println("Test test1 multiply by 10:");
         MinMaxPrime timeTenStatic = MinMaxPrime.multiply(10,test1);
         System.out.println(timeTenStatic);
-        System.out.println("Test test1 multiply by -10(negative multiplier, because prime can't be negative, it will " +
+        System.out.println("Test test1 multiply by -10(negative multiplier, because prime can't be negative,\n" + "it will " +
                 " become 2 if the program work properly):");
+        MinMaxPrime timeNegativeStatic = MinMaxPrime.multiply(-10,test1);
+        System.out.println(timeNegativeStatic);
         System.out.println("*".repeat(20) + " equals method test below: ");
         MinMaxPrime test4 = new MinMaxPrime(4,24);
         System.out.println("The value of the object test4 for comparison: " + test4);
