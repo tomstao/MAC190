@@ -45,7 +45,7 @@ public class Point {
     }
 
     Point midpoint(Point point) {
-        return new Point(x + (point.x - x) / 2, y + (point.y - y) / 2);
+        return new Point((x + point.x) / 2, (y + point.y ) / 2);
     }
 
     Point move(double a) {
