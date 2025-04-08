@@ -49,6 +49,14 @@ public class Point {
         return new Point((x + point.x) / 2, (y + point.y) / 2);
     }
 
+    public void setX(double x) {
+        this.x = x;
+    }
+
+    public void setY(double y) {
+        this.y = y;
+    }
+
     Point move(double a) {
         return new Point(x + a, y + a);
     }
@@ -61,16 +69,16 @@ public class Point {
         return Math.sqrt(Math.pow(x - point.x, 2) + Math.pow(y - point.y, 2));
     }
 
-    static public double distance(Point point1, Point point2) {
+    public static double distance(Point point1, Point point2) {
         return point1.distance(point2);
     }
 
-    static public Point midpoint(Point point1, Point point2) {
+    public static Point midpoint(Point point1, Point point2) {
         return point1.midpoint(point2);
     }
 
-    static public Point move(Point point1, Point point2, double a) {
-        return point1.midpoint(point2).move(a);
+    public static Point move(Point point, double a) {
+        return point.move(a);
     }
 
 }

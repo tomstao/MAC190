@@ -59,6 +59,18 @@ public class Circle {
         this.center = center;
     }
 
+    public void setCenter(double x, double y) {
+        this.center = new Point(x, y);
+    }
+
+    public void setX(double x) {
+        this.center.setX(x);
+    }
+
+    public void setY(double y) {
+        this.center.setY(y);
+    }
+
     @Override
     public String toString() {
         return "This circle has radius " + radius + " and center " + center.toString();
@@ -91,11 +103,11 @@ public class Circle {
         return new Circle(center.midpoint(c.center), (c.radius + radius) / 2);
     }
 
-    static public Circle move(Circle circle, double a) {
+    public static Circle move(Circle circle, double a) {
         return circle.move(a);
     }
 
-    static public Circle midCircle(Circle circle1, Circle circle2) {
+    public static Circle midCircle(Circle circle1, Circle circle2) {
         return circle1.midCircle(circle2);
     }
 

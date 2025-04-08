@@ -11,6 +11,8 @@ public class Main {
         Circle aveCircle = oneInput.midCircle(threeInput);
         Point point1 = new Point(2,3);
         Point point2 = new Point(4,5);
+        Point staticTest = new Point(0,0);
+        Point staticTest2 = new Point(4,23);
 
         System.out.println("Default: " + defaultCircle);
         System.out.println("One input: " + oneInput);
@@ -19,6 +21,10 @@ public class Main {
         System.out.println("Moved Circle(default center and radius moved by 3): " + movedCircle);
         System.out.println("Ave(0,0,5.5) and (3.5, 10, 9): " + aveCircle);
         System.out.println("Distance: " + point1.distance(point2));
+        System.out.println("*".repeat(20) + "test for static methods:");
+        System.out.println("staticTest distance: " + Point.distance(staticTest, staticTest2));
+        System.out.println("staticTest mid point: " + Point.midpoint(staticTest, staticTest2) );
+        System.out.println("staticTest2 move: " + Point.move(staticTest2, 5));
 
     }
 }
