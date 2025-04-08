@@ -34,7 +34,7 @@ public class Point {
 
     @Override
     public String toString() {
-        return "This Point x-coordinate =" + x + ", y-coordinate=" + y;
+        return "This Point has x-coordinate =" + x + ", and y-coordinate=" + y;
     }
 
     public boolean equalCoordinate(Point point) {

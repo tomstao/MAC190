@@ -73,7 +73,7 @@ public class Circle {
 
     @Override
     public String toString() {
-        return "This circle has radius " + radius + " and center " + center.toString();
+        return "This circle has radius " + radius + " and center: " + center.toString();
     }
 
     public boolean equalShape(Circle input) {
