@@ -91,4 +91,12 @@ public class Circle {
         return new Circle(center.midpoint(c.center), (c.radius + radius) / 2);
     }
 
+    static public Circle move(Circle circle, double a) {
+        return circle.move(a);
+    }
+
+    static public Circle midCircle(Circle circle1, Circle circle2) {
+        return circle1.midCircle(circle2);
+    }
+
 }

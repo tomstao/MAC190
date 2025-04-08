@@ -60,4 +60,17 @@ public class Point {
 
         return Math.sqrt(Math.pow(x - point.x, 2) + Math.pow(y - point.y, 2));
     }
+
+    static public double distance(Point point1, Point point2) {
+        return point1.distance(point2);
+    }
+
+    static public Point midpoint(Point point1, Point point2) {
+        return point1.midpoint(point2);
+    }
+
+    static public Point move(Point point1, Point point2, double a) {
+        return point1.midpoint(point2).move(a);
+    }
+
 }
