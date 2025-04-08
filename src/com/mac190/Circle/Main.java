@@ -9,6 +9,8 @@ public class Main {
         Circle threeInput = new Circle(3.5, 10, 9);
         Circle movedCircle = oneInput.move(3);
         Circle aveCircle = oneInput.midCircle(threeInput);
+        Point point1 = new Point(2,3);
+        Point point2 = new Point(4,5);
 
         System.out.println("Default: " + defaultCircle);
         System.out.println("One input: " + oneInput);
@@ -16,6 +18,7 @@ public class Main {
         System.out.println("Three input(3.5,10,9): " + threeInput);
         System.out.println("Moved Circle(default center and radius moved by 3): " + movedCircle);
         System.out.println("Ave(0,0,5.5) and (3.5, 10, 9): " + aveCircle);
+        System.out.println("Distance: " + point1.distance(point2));
 
     }
 }

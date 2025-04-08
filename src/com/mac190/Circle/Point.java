@@ -1,6 +1,7 @@
 package com.mac190.Circle;
 
 /*
+@ Tao Su
 Desing a class Point that has two coordinates X and Y.
 -Default constructor
 - A constructor that takes in one double
@@ -45,7 +46,7 @@ public class Point {
     }
 
     Point midpoint(Point point) {
-        return new Point((x + point.x) / 2, (y + point.y ) / 2);
+        return new Point((x + point.x) / 2, (y + point.y) / 2);
     }
 
     Point move(double a) {
@@ -55,14 +56,6 @@ public class Point {
     double distance(Point point) {
         if (this.equalCoordinate(point)) {
             return 0;
-        }
-
-        if (x == point.x) {
-            return Math.abs(y - point.y);
-        }
-
-        if (y == point.y) {
-            return Math.abs(x - point.x);
         }
 
         return Math.sqrt(Math.pow(x - point.x, 2) + Math.pow(y - point.y, 2));
