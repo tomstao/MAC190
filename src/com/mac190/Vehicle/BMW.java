@@ -16,12 +16,22 @@ import java.util.Objects;
 
 public class BMW extends Vehicle {
     private String fuelType;
-    private String model = "X5";
+    private String model;
 
     public BMW() {
         super();
         this.setBrand("BMW");
         fuelType = "d";
+        model = "N/A";
+        this.setFuelType("Passenger");
+    }
+
+    public BMW(String color, String model, int year, String fuelType) {
+        this();
+        this.setColor(color);
+        this.setModel(model);
+        this.setYear(year);
+        this.setFuelType(fuelType);
     }
 
 
@@ -44,6 +54,7 @@ public class BMW extends Vehicle {
     public void leftTurn(double degrees) {
         System.out.println("This " + this.getBrand() + '-' + this.getModel() + " is turning left " + degrees + " smoothly!");
     }
+
     public void rightTurn(double degrees) {
         System.out.println("This " + this.getBrand() + '-' + this.getModel() + " is turning right " + degrees + " smoothly!");
     }

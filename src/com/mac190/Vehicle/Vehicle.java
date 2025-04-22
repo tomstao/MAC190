@@ -83,7 +83,6 @@ public class Vehicle {
     }
 
 
-
     public double getSpeed() {
         return speed;
     }
@@ -155,7 +154,6 @@ public class Vehicle {
         Vehicle vehicle = (Vehicle) o;
         return year == vehicle.year && Double.compare(speed, vehicle.speed) == 0 && Objects.equals(brand, vehicle.brand) && Objects.equals(color, vehicle.color) && Objects.equals(vin, vehicle.vin) && Objects.equals(type, vehicle.type);
     }
-
 
 
 }

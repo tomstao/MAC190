@@ -27,11 +27,11 @@ public class Truck {
         this.loads = loads;
     }
 
-    public void leftTurn (double degrees) {
+    public void leftTurn(double degrees) {
         System.out.println("This truck is making a " + degrees + " degrees left turn smoothly");
     }
 
-    public void rightTurn (double degrees) {
+    public void rightTurn(double degrees) {
         System.out.println("This truck is making a " + degrees + " right tunr degrees smoothly");
     }
 
