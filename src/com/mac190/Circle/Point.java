@@ -69,6 +69,14 @@ public class Point {
         return Math.sqrt(Math.pow(x - point.x, 2) + Math.pow(y - point.y, 2));
     }
 
+    public double getX() {
+        return x;
+    }
+
+    public double getY() {
+        return y;
+    }
+
     public static double distance(Point point1, Point point2) {
         return point1.distance(point2);
     }
