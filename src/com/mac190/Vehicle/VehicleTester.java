@@ -22,7 +22,24 @@ package com.mac190.Vehicle;
 //use the reference to move it forward and backward.
 public class VehicleTester {
     public static void main(String[] args) {
+        Vehicle vehicle = new Vehicle();
+        System.out.println(vehicle);
+        vehicle.setBrand("Jeep");
+        vehicle.setColor("Gray");
+        System.out.println(vehicle);
+        vehicle.leftTurn(90);
+        vehicle.rightTurn(90);
+        vehicle.moveBack();
+        vehicle.moveForward(80);
 
+        BMW x6 = new BMW();
+        x6.setType("X6");
+        x6.setColor("Gray");
+        x6.leftTurn(90);
+        x6.rightTurn(90);
+        x6.moveForward(80);
+        x6.moveBack();
 
+        System.out.println(vehicle.equals(x6));;
     }
 }
