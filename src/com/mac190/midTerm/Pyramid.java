@@ -72,7 +72,7 @@ public class Pyramid {
         return Double.compare(pyramid.pyHeight, pyHeight) == 0 && Objects.equals(base, pyramid.base);
     }
 
-    public  Pyramid add(Pyramid input) {
+    public Pyramid add(Pyramid input) {
         return new Pyramid(this.base.add(input.getBase()), (this.pyHeight + input.getPyHeight()) / 2);
     }
 

@@ -1,6 +1,6 @@
 package com.mac190.midTerm;
 
-public class iPyramid extends Triangle{
+public class iPyramid extends Triangle {
     // *********************** field
     private double pyHeight;
 
@@ -54,7 +54,7 @@ public class iPyramid extends Triangle{
         return Double.compare(iPyramid.pyHeight, pyHeight) == 0;
     }
 
-    public iPyramid add (iPyramid input) {
+    public iPyramid add(iPyramid input) {
         return new iPyramid(input.getBase() + this.getBase(), (input.getHeight() + this.getHeight()) / 2, (this.pyHeight + input.getPyHeight()) / 2);
     }
 

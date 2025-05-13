@@ -12,7 +12,7 @@ public class Main {
         Triangle t2 = new Triangle(2);
         System.out.println(t2);
 
-        Triangle t3 = new Triangle(3,4);
+        Triangle t3 = new Triangle(3, 4);
         System.out.println(t3);
 
         System.out.println("Area of t3: " + t3.area());
@@ -25,7 +25,7 @@ public class Main {
         Pyramid p2 = new Pyramid(2);
         System.out.println(p2);
 
-        Pyramid p3 = new Pyramid(3,4,5);
+        Pyramid p3 = new Pyramid(3, 4, 5);
         System.out.println(p3);
         System.out.println(p3.volume());
         System.out.println(p3.add(p2));
@@ -34,7 +34,7 @@ public class Main {
 
         iPyramid iP1 = new iPyramid();
         iPyramid iP2 = new iPyramid(2);
-        iPyramid iP3 = new iPyramid(3,4,5);
+        iPyramid iP3 = new iPyramid(3, 4, 5);
         System.out.println(iP1);
         System.out.println(iP2);
         System.out.println(iP3);

@@ -4,6 +4,7 @@ public class Triangle {
     // ********************** field
     private double base;
     private double height;
+
     //******************* Constructors
     public Triangle() {
 
@@ -11,15 +12,16 @@ public class Triangle {
         this.height = 0;
     }
 
-    public Triangle (double base, double height) {
+    public Triangle(double base, double height) {
         this.base = base;
         this.height = height;
     }
 
-    public Triangle (double base) {
+    public Triangle(double base) {
         this.base = base;
         this.height = base;
     }
+
     //************************************** getters/setters
     public double getBase() {
         return base;
@@ -59,7 +61,7 @@ public class Triangle {
     }
 
     public Triangle add(Triangle input) {
-        return new Triangle(this.base + input.getBase(), (this.height + input.getHeight()) / 2 );
+        return new Triangle(this.base + input.getBase(), (this.height + input.getHeight()) / 2);
     }
 
     static public Triangle add(Triangle t1, Triangle t2) {
