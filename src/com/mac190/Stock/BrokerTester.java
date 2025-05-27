@@ -46,7 +46,7 @@ public class BrokerTester {
                }
                 System.out.println("All holdings displayed!");
             }
-            System.out.println("Stock Holdings: " + stockbroker.getHoldings().toString() + "\nCurrency Holdings: "+ currencybroker.getHoldings().toString());
+//            System.out.println("Stock Holdings: " + stockbroker.getHoldings().toString() + "\nCurrency Holdings: "+ currencybroker.getHoldings().toString());
         } while (!choice.contains("quit"));
     }
 }
