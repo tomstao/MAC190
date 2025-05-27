@@ -12,6 +12,7 @@ public class BrokerTester {
         do {
             System.out.println("What would you like to buy?");
             System.out.println("Currency or Stock?");
+            System.out.println("Check your holdings?");
             choice = sc.next().toLowerCase(Locale.ROOT);
             if (choice.contains("stock")) {
                 System.out.println("What's the ticker of your stock: ");
@@ -30,6 +31,20 @@ public class BrokerTester {
                 System.out.println("How much are you paying: ");
                 float price  = sc.nextFloat();
                 currencybroker.buy(ticker,"CUR",shares,price);
+            }
+
+            if (choice.contains("holdings")) {
+               if(stockbroker.getHoldings() == null && currencybroker.getHoldings() == null){
+                   throw new NullPointerException("You don't have any holdings");
+               }
+
+               if(stockbroker.getHoldings() != null){
+                   System.out.println("You are holding stocks: " + stockbroker.getHoldings());
+               }
+               if(currencybroker.getHoldings() != null){
+                   System.out.println("You are holding currencies: " + currencybroker.getHoldings());
+               }
+                System.out.println("All holdings displayed!");
             }
             System.out.println("Stock Holdings: " + stockbroker.getHoldings().toString() + "\nCurrency Holdings: "+ currencybroker.getHoldings().toString());
         } while (!choice.contains("quit"));
