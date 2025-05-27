@@ -18,10 +18,10 @@ public class RobinHood extends Broker implements iBroker{
             throw new IllegalArgumentException("The holdings is not initialized");
         }
         //check if the ticket t already exists in holdings, if it does
-        Security se = null;
-            for (int i = 0; i < getHoldings().size(); i++) {
-                if (t.equalsIgnoreCase(getHoldings().get(i).getTicker())) {
-                    se = getHoldings().get(i);
+//        Security se = null;
+            for (Security se: getHoldings()) {
+
+                if (t.equalsIgnoreCase(se.getTicker())) {
                     se.setPrice((se.getPrice() * se.getShares() + p * s + 1) / (se.getShares() + s));
                     se.setShares(se.getShares() + s);
                     return;
@@ -29,7 +29,7 @@ public class RobinHood extends Broker implements iBroker{
             }
 
         float newPrice = (p * s + 1) / s;
-        se = new Security(t, type, s, newPrice);
+        Security se = new Security(t, type, s, newPrice);
         //compute the new price as (oldPrice*oldNumberShares + (p*s+ fees))/(oldNumbershares + s)
         //update number shares and new price
         //if t does not exist already
