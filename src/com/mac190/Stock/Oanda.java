@@ -17,9 +17,12 @@ public class Oanda extends Broker implements iBroker {
             throw new IllegalArgumentException("Can only buy Currencies!");
         }
         //check if the ticket t already exists in holdings, if it does
+        if(getHoldings() == null)
+        {
+            throw new IllegalArgumentException("The holdings is not initialized");
+        }
         Security se = null;
 
-        try {
             for (int i = 0; i < getHoldings().size(); i++) {
                 if (t.equalsIgnoreCase(getHoldings().get(i).getTicker())) {
                     se = getHoldings().get(i);
@@ -28,13 +31,6 @@ public class Oanda extends Broker implements iBroker {
                     return;
                 }
             }
-        } catch (NullPointerException e) {
-            System.out.println("Null pointer exception");
-        } catch (IndexOutOfBoundsException e) {
-            System.out.println("Index out of bounds");
-        } catch (Exception e) {
-            System.out.println("Unknown exception");
-        }
 
         float newPrice = (p * s + 1) / s;
         se = new Security(t, type, s, newPrice);
