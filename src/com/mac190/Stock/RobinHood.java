@@ -15,16 +15,22 @@ public class RobinHood extends Broker implements iBroker{
         }
         //check if the ticket t already exists in holdings, if it does
         Security se = null;
-
-        for(int i = 0; i < getHoldings().size(); i++) {
-            if(t.equalsIgnoreCase(getHoldings().get(i).getTicker())) {
-                se = getHoldings().get(i);
-                se.setPrice((se.getPrice()*se.getShares() + p * s + 1) / (se.getShares() + s));
-                se.setShares(se.getShares() + s);
-                return;
+        try {
+            for (int i = 0; i < getHoldings().size(); i++) {
+                if (t.equalsIgnoreCase(getHoldings().get(i).getTicker())) {
+                    se = getHoldings().get(i);
+                    se.setPrice((se.getPrice() * se.getShares() + p * s + 1) / (se.getShares() + s));
+                    se.setShares(se.getShares() + s);
+                    return;
+                }
             }
+        } catch (NullPointerException e) {
+            System.out.println("Null pointer exception");
+        } catch (IndexOutOfBoundsException e) {
+            System.out.println("Index out of bounds");
+        } catch (Exception e) {
+            System.out.println("Unknown exception");
         }
-
         float newPrice = (p * s + 1) / s;
         se = new Security(t, type, s, newPrice);
         //compute the new price as (oldPrice*oldNumberShares + (p*s+ fees))/(oldNumbershares + s)
