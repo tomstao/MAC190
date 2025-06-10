@@ -105,8 +105,7 @@ abstract class Game {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Game)) return false;
-        Game game = (Game) o;
+        if (!(o instanceof Game game)) return false;
         return numberPlayers == game.numberPlayers && scoreA == game.scoreA && scoreB == game.scoreB && substitutedA == game.substitutedA && substitutedB == game.substitutedB && Objects.equals(teamA, game.teamA) && Objects.equals(teamB, game.teamB);
     }
 
