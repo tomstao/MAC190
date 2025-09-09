@@ -27,15 +27,19 @@ class Arrays {
     }
 
     public void add(int index, int item) {
-        if(size == array.length){
-            return;
+        if (size == array.length) {
+            throw new IllegalStateException("Array is full");
         }
-        int oldIndex = index + 1;
-        if (index < 0 || index > size || oldIndex > size) {
+        if (index < 0 || index > size) {
             throw new IndexOutOfBoundsException();
         }
-        array[oldIndex] = array[index];
+
+        for (int i = size; i > index; i--) {
+            array[i] = array[i - 1];
+        }
+
         array[index] = item;
+        size++;
     }
 
     public boolean isEmpty() {
@@ -79,7 +83,14 @@ class main{
     public static void main(String[] args) {
         Arrays arrays = new Arrays(5);
         System.out.println(arrays);
+        arrays.add(1);
+        arrays.add(2);
+        arrays.add(3);
+        arrays.add(4);
+        System.out.println(arrays);
 
+        arrays.add(4,5);
+        System.out.println(arrays);
     }
 }
 
