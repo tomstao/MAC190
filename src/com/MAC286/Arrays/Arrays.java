@@ -26,6 +26,18 @@ class Arrays {
         }
     }
 
+    public void add(int index, int item) {
+        if(size == array.length){
+            return;
+        }
+        int oldIndex = index + 1;
+        if (index < 0 || index > size || oldIndex > size) {
+            throw new IndexOutOfBoundsException();
+        }
+        array[oldIndex] = array[index];
+        array[index] = item;
+    }
+
     public boolean isEmpty() {
         return size == 0;
     }
