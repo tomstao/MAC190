@@ -23,8 +23,6 @@ class Arrays {
     public void add(int item) {
         if (size < array.length) {
             array[size++] = item;
-        } else {
-            return;
         }
     }
 
