@@ -66,6 +66,8 @@ class Arrays{
     public int remove(){
         if(size == 0){
             throw new ArrayIndexOutOfBoundsException();
+        } else if(size == 1){
+            return array[0];
         }
         int item = array[0];
         for (int i = 1; i < size; i++) {
