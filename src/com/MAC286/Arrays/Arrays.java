@@ -64,7 +64,7 @@ class Arrays{
     }
     //HW1 complete the remove method that removes the top of the array and returns it. Test it
     public int remove(){
-        if(size == 0){
+        if(isEmpty()){
             throw new ArrayIndexOutOfBoundsException();
         } else if(size == 1){
             return array[0];
