@@ -71,6 +71,7 @@ class Arrays{
         for (int i = 1; i < size; i++) {
             array[i - 1] = array[i];
         }
+        size--;
         return item;
     }
     /*
