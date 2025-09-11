@@ -1,4 +1,4 @@
-/ Use this editor to write, compile and run your Java code online
+package com.MAC286.Arrays;// Use this editor to write, compile and run your Java code online
 
 // Use this editor to write, compile and run your Java code online
 //Design a class OurArray that has the following properties. 
@@ -9,16 +9,16 @@
 // 4- Method void add(int item) adds item to the back of the array. Assign item to index size and increase size by 1
 // 5- toString returns content of the arrayin the form [-2, -5] 
 
-class OurArray{
+class Arrays{
     private int[] array;
     private int size;
 
     //Default constructor 
-    public OurArray(){
+    public Arrays(){
         array = new int[10];
         size = 0;
     }
-    public OurArray(int c){
+    public Arrays(int c){
         array = new int[c];
         size = 0;
     }
@@ -64,8 +64,14 @@ class OurArray{
     }
     //HW1 complete the remove method that removes the top of the array and returns it. Test it
     public int remove(){
-
-        return 0;
+        if(size == 0){
+            throw new ArrayIndexOutOfBoundsException();
+        }
+        int item = array[0];
+        for (int i = 1; i < size; i++) {
+            array[i - 1] = array[i];
+        }
+        return item;
     }
     /*
     public String toString(){
@@ -102,7 +108,7 @@ class OurArray{
     public static void main(String[] args){
 
         //create an object OurArray
-        OurArray A = new OurArray(5);
+        Arrays A = new Arrays(5);
         System.out.println("A: " + A);
         A.add(-2);
         A.add(-5);
