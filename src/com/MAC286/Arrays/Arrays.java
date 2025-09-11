@@ -62,6 +62,23 @@ class Arrays{
         size++;
 
     }
+
+    public int[] getArray() {
+        return array;
+    }
+
+    public void setArray(int[] array) {
+        this.array = array;
+    }
+
+    public int getSize() {
+        return size;
+    }
+
+    public void setSize(int size) {
+        this.size = size;
+    }
+
     //HW1 complete the remove method that removes the top of the array and returns it. Test it
     public int remove(){
         if(isEmpty()){
