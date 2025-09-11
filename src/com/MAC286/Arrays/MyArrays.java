@@ -9,16 +9,23 @@ package com.MAC286.Arrays;// Use this editor to write, compile and run your Java
 // 4- Method void add(int item) adds item to the back of the array. Assign item to index size and increase size by 1
 // 5- toString returns content of the arrayin the form [-2, -5] 
 
-class Arrays{
+class MyArrays {
     private int[] array;
     private int size;
 
+    public void resize(){
+        int[] newArray = new int[ 2 * size ];
+        System.arraycopy(array, 0, newArray, 0, size);
+//        array = Arrays.copyOfRange(array, size, 2 * array.length);
+        array = newArray;
+    }
+
     //Default constructor 
-    public Arrays(){
+    public MyArrays(){
         array = new int[10];
         size = 0;
     }
-    public Arrays(int c){
+    public MyArrays(int c){
         array = new int[c];
         size = 0;
     }
@@ -51,8 +58,7 @@ class Arrays{
             throw new ArrayIndexOutOfBoundsException();
         }
         if(size == array.length){
-            System.out.println("Cannot add it's full");
-            return;
+            resize();
         }
         //shift up all items starting from size-1 down to ind
         for(int i = size - 1; i >= ind; i--){
@@ -128,7 +134,7 @@ class Arrays{
     public static void main(String[] args){
 
         //create an object OurArray
-        Arrays A = new Arrays(5);
+        MyArrays A = new MyArrays(5);
         System.out.println("A: " + A);
         A.add(-2);
         A.add(-5);

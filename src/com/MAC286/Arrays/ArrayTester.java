@@ -3,7 +3,7 @@ package com.MAC286.Arrays;
 public class ArrayTester {
     public static void main(String[] args) {
 
-        Arrays arr = new Arrays();
+        MyArrays arr = new MyArrays();
 
 
         for (int i = 0; i < arr.getArray().length; i++) {
