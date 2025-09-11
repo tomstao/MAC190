@@ -1,4 +1,7 @@
-package com.MAC286.Arrays;//Design a class OurArray that has the following properties.
+/ Use this editor to write, compile and run your Java code online
+
+// Use this editor to write, compile and run your Java code online
+//Design a class OurArray that has the following properties. 
 //1- A reference to an array of integers
 // 2- an integer to keep track of the size of the array
 // 3- default constructor that creates an array of 10 integers and sets size to 0
@@ -6,91 +9,106 @@ package com.MAC286.Arrays;//Design a class OurArray that has the following prope
 // 4- Method void add(int item) adds item to the back of the array. Assign item to index size and increase size by 1
 // 5- toString returns content of the arrayin the form [-2, -5] 
 
-class Arrays {
-    private final int[] array;
+class OurArray{
+    private int[] array;
     private int size;
 
-    public Arrays() {
+    //Default constructor 
+    public OurArray(){
         array = new int[10];
-        this.size = 0;
+        size = 0;
     }
-
-    public Arrays(int size) {
-        array = new int[size];
-        this.size = 0;
+    public OurArray(int c){
+        array = new int[c];
+        size = 0;
     }
-
-    public void add(int item) {
-        if (size < array.length) {
-            array[size++] = item;
-        }
-    }
-
-    public void add(int index, int item) {
-        if (size == array.length) {
-            throw new IllegalStateException("Array is full");
-        }
-        if (index < 0 || index > size) {
-            throw new IndexOutOfBoundsException();
-        }
-
-        for (int i = size; i > index; i--) {
-            array[i] = array[i - 1];
-        }
-
-        array[index] = item;
-        size++;
-    }
-
-    public boolean isEmpty() {
-        return size == 0;
-    }
-
-    public int[] getArray() {
-        return array;
-    }
-
-    public int getSize() {
+    //getter for size
+    public int size(){
         return size;
     }
-
-    public void setSize(int size) {
-        this.size = size;
-    }
-
-    public int getLength() {
+    //getter for capacity 
+    public int capacity(){
         return array.length;
     }
+    public boolean isEmpty(){
+        return (size == 0);
+    }
+    public void add(int item){
+        //check if full 
+        if(size == array.length){
+            System.out.println("Array full cannot add");
+            return;
+            //resize()
+        }
+        //add the item at index size 
+        array[size] = item;
+        //increment the size 
+        size++;
+    }
+    public void add(int ind, int item){
+        //check if ind in a valid index
+        if(ind < 0 || ind > size){
+            throw new ArrayIndexOutOfBoundsException();
+        }
+        if(size == array.length){
+            System.out.println("Cannot add it's full");
+            return;
+        }
+        //shift up all items starting from size-1 down to ind
+        for(int i = size - 1; i >= ind; i--){
+            array[i+1] = array[i];
+        }
+        array[ind] = item;
+        size++;
 
-    @Override
-    public String toString() {
-        if (isEmpty()) {
+    }
+    //HW1 complete the remove method that removes the top of the array and returns it. Test it
+    public int remove(){
+
+        return 0;
+    }
+    /*
+    public String toString(){
+        if(this.isEmpty()){
             return "[]";
         }
-        StringBuilder sb = new StringBuilder("[");
-        for (int i = 0; i < size; i++) {
-            sb.append(array[i]);
-            if (i < size - 1) {
-                sb.append(", ");
-            }
+        String str = "[";
+        for(int i = 0; i < size-1; i++){
+            str += array[i] + ", ";
         }
-        sb.append("]");
-        return sb.toString();
+        str += array[size-1]+"]";
+        
+        //One solution not advisable
+        //str = str.replace(", ]", "]");
+        return str;
+    }
+    */
+    //Another way of dealing with the comma problem
+    public String toString(){
+        if(this.isEmpty()){
+            return "[]";
+        }
+        String str = "[" + array[0];
+        for(int i =1; i < size; i++){
+            str += ", "+ array[i];
+        }
+        str += "]";
+
+        //One solution not advisable
+        //str = str.replace(", ]", "]");
+        return str;
+    }
+
+    public static void main(String[] args){
+
+        //create an object OurArray
+        OurArray A = new OurArray(5);
+        System.out.println("A: " + A);
+        A.add(-2);
+        A.add(-5);
+        A.add(-7);
+        System.out.println("A: " + A);
+        A.add(1, -9);
+        System.out.println("A: " + A);
     }
 }
-
-class main{
-    public static void main(String[] args) {
-        Arrays arrays = new Arrays(5);
-        System.out.println(arrays);
-        arrays.add(1);
-        arrays.add(2);
-        arrays.add(3);
-        arrays.add(4);
-        System.out.println(arrays);
-
-        arrays.add(4,5);
-        System.out.println(arrays);
-    }
-}
-
