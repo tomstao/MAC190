@@ -155,6 +155,31 @@ class OurArray <T>{
         Random generator = new Random();
         return generator.nextInt(-max, max + 1);
     }
+
+    public T[] getArray() {
+        return array;
+    }
+
+    public void setArray(T[] array) {
+        this.array = array;
+    }
+
+    public int getIncrement() {
+        return Increment;
+    }
+
+    public void setIncrement(int increment) {
+        Increment = increment;
+    }
+
+    public int getSize() {
+        return size;
+    }
+
+    public void setSize(int size) {
+        this.size = size;
+    }
+
     public static void main(String[] args) {
         /*
         1- Create an OurArray object of Integers
@@ -203,6 +228,14 @@ class OurArray <T>{
             }
         }
         System.out.println("]");
+
+        OurArray<String> s = new OurArray<>();
+        s.add("Hello");
+        s.add("Hi");
+        s.add("Bye");
+        s.add("How");
     }
+
+
 
 }
