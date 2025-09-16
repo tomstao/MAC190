@@ -171,13 +171,9 @@ public class OurStack<T> {
     public T pop(){
         if(this.isEmpty()){
             throw new EmptyStackException();
-        } else if(size == 1){
-            return array[0];
         }
-        T save = array[0];
-        for(int i = 1; i < size; i++){
-            array[i] = array[i-1];
-        }
+        T save = array[this.size - 1];
+        array[this.size - 1] = null;
         size--;
         return save;
     }
