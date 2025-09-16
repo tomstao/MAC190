@@ -14,7 +14,7 @@ package com.MAC286.Vector;
 import java.util.EmptyStackException;
 import java.util.Random;
 
-class OurArray <T>{
+public class OurArray <T>{
     private T[] array;
     private int size;
     private int Increment;
