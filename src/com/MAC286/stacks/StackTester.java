@@ -1,7 +1,5 @@
 package com.MAC286.stacks;
 
-import java.util.Stack;
-
 /*
 A Stackis a data structure in which when you add something to (store) it goes
 to the top of the stack and when you remove the top comes out first.

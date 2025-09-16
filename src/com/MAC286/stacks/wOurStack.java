@@ -34,4 +34,8 @@ public class wOurStack<T> {
     public String toString(){
         return ourStack.toString();
     }
+
+    public int size(){
+        return ourStack.size();
+    }
 }
