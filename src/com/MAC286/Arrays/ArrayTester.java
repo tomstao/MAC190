@@ -16,5 +16,9 @@ public class ArrayTester {
         System.out.println("-".repeat(30));
         System.out.println(arr);
 
+        System.out.println("Array size: " + arr.getSize());
+        arr.resize();
+        System.out.println("Array length after resizing: " + arr.getArray().length);
+
     }
 }
