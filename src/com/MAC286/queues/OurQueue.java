@@ -27,6 +27,9 @@ public class OurQueue<T>{
 
     public void add(T item){
         if(isFull()){
+            if(size == 0) {
+                reSize(10);
+            }
             reSize(size * 2);
         }
         queue[size++] = item;
