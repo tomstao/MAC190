@@ -5,6 +5,8 @@ import java.util.NoSuchElementException;
 public class OurQueue<T>{
     private T[] queue;
     private int size;
+    private T front;
+    private T rear;
 
     @SuppressWarnings("unchecked")
     public OurQueue() {
@@ -16,7 +18,6 @@ public class OurQueue<T>{
     public int getSize() {
         return size;
     }
-
     public boolean isFull() {
         return size == queue.length;
     }
@@ -25,10 +26,13 @@ public class OurQueue<T>{
         if(isFull()){
             if(size == 0) {
                 reSize(10);
+                this.front = item;
+                this.rear = item;
             }
             reSize(size * 2);
         }
         queue[size++] = item;
+        this.rear = item;
     }
 
     public T remove(){
