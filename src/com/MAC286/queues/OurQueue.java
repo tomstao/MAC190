@@ -1,81 +1,61 @@
 package com.MAC286.queues;
 
-public class OurQueue<T> {
+import java.util.NoSuchElementException;
+
+public class OurQueue<T>{
     private T[] queue;
-    private int front;
-    private int rear;
     private int size;
-    private int capacity;
 
     @SuppressWarnings("unchecked")
-    public OurQueue(int capacity) {
-        this.capacity = capacity;
-        this.queue = (T[]) new Object[capacity];
-        this.front = 0;
-        this.rear = -1;
-        this.size = 0;
+    public OurQueue() {
+        size = 0;
+        queue = (T[]) new Object[10];
     }
 
-    public void enqueue(T item) {
-        if (isFull()) {
-            throw new IllegalStateException("Queue is full");
-        }
-        rear = (rear + 1) % capacity;
-        queue[rear] = item;
-        size++;
+    public OurQueue(T[] queue, int size) {
+        this.queue = queue;
+        this.size = size;
     }
 
-    public T remove() {
-        if (isEmpty()) {
-            throw new IllegalStateException("Queue is empty");
-        }
-        T item = queue[front];
-        queue[front] = null;
-        front = (front + 1) % capacity;
-        size--;
-        return item;
-    }
-
-    public T peek() {
-        if (isEmpty()) {
-            throw new IllegalStateException("Queue is empty");
-        }
-        return queue[front];
-    }
-
-    public boolean isEmpty() {
-        return size == 0;
-    }
-
-    public boolean isFull() {
-        return size == capacity;
-    }
-
-    public int size() {
+    public int getSize() {
         return size;
     }
 
-    public int getCapacity() {
-        return capacity;
+    public boolean isFull() {
+        return size == queue.length;
     }
 
-    @Override
-    public String toString() {
-        if (isEmpty()) {
-            return "[]";
+    public void add(T item){
+        if(isFull()){
+            reSize(size * 2);
         }
-        StringBuilder sb = new StringBuilder("[");
-        int index = front;
-        for (int i = 0; i < size; i++) {
-            sb.append(queue[index]);
-            if (i < size - 1) {
-                sb.append(", ");
-            }
-            index = (index + 1) % capacity;
+        queue[size++] = item;
+    }
+
+    public T remove(){
+        if(isEmpty()){
+            throw new NoSuchElementException();
         }
-        sb.append("]");
-        return sb.toString();
+        return queue[--size];
+    }
+
+    public T peek(){
+        if(isEmpty()){
+            throw new NoSuchElementException();
+        }
+        return queue[size - 1];
+    }
+
+    @SuppressWarnings("unchecked")
+    public void reSize(int size) {
+        this.size = size;
+        T[] newQueue = (T[]) new Object[size];
+        System.arraycopy(queue, 0, newQueue, 0, size);
+        this.queue = newQueue;
+    }
 
 
+    public boolean isEmpty() {
+        return size == 0;
     }
 }
