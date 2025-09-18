@@ -36,8 +36,11 @@ public class OurQueue<T>{
             throw new NoSuchElementException();
         }
 
-        T item = queue[--size];
-        queue[size] = null;
+        T item = queue[0];
+        for(int i = 1; i < size; i++){
+            queue[i] = queue[i+1];
+        }
+        size--;
         return item;
     }
 
