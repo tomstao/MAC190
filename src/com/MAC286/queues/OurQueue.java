@@ -36,7 +36,10 @@ public class OurQueue<T>{
         if(isEmpty()){
             throw new NoSuchElementException();
         }
-        return queue[--size];
+
+        T item = queue[--size];
+        queue[size] = null;
+        return item;
     }
 
     public T peek(){
