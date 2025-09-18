@@ -12,10 +12,6 @@ public class OurQueue<T>{
         queue = (T[]) new Object[10];
     }
 
-    public OurQueue(T[] queue, int size) {
-        this.queue = queue;
-        this.size = size;
-    }
 
     public int getSize() {
         return size;
