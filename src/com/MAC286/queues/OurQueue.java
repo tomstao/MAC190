@@ -1,70 +1,75 @@
 package com.MAC286.queues;
 
+import java.util.Arrays;
 import java.util.NoSuchElementException;
 
-public class OurQueue<T>{
+public class OurQueue <T>{
+    //define a reference to an array of Ts
     private T[] queue;
+    //size
     private int size;
+
     private T front;
     private T rear;
-
-    @SuppressWarnings("unchecked")
-    public OurQueue() {
-        size = 0;
+    //default constructor
+    public OurQueue(){
         queue = (T[]) new Object[10];
+        size = 0;
     }
-
-
-    public int getSize() {
+    //getter for size
+    public int size(){
         return size;
     }
-    public boolean isFull() {
-        return size == queue.length;
+    //isEmpty
+    public boolean isEmpty(){
+        return (size == 0);
     }
-
+    private void resize(){
+        queue = Arrays.copyOf(queue, queue.length*2);
+    }
+    //add(T e) add e to the back of the queue
     public void add(T item){
-        if(isFull()){
-            if(size == 0) {
-                reSize(10);
-                this.front = item;
-                this.rear = item;
-            }
-            reSize(size * 2);
+        if(size == queue.length){
+            resize();
         }
-        queue[size++] = item;
+        //add item at the back
+        queue[size] = item;
+        size++;
         this.rear = item;
     }
-
+    //T remove() removes the first in the queue and returns it
     public T remove(){
-        if(isEmpty()){
+        if(this.isEmpty()){
             throw new NoSuchElementException();
         }
-
-        T item = queue[0];
-        for(int i = 1; i < size; i++){
+        //save the first
+        T save = queue[0];
+        for(int i = 0; i < size-1; i++){
             queue[i] = queue[i+1];
         }
         size--;
-        return item;
+        return save;
     }
-
+    //T peek() returns the first in the queue without removing it
     public T peek(){
-        if(isEmpty()){
+        if(this.isEmpty()){
             throw new NoSuchElementException();
         }
-        return queue[size - 1];
+        return queue[0];
     }
+    //String toString()
+    public String toString(){
+        if(this.isEmpty()){
+            return "[]";
+        }
+        String str = "[" + queue[0];
+        for(int i =1; i < size; i++){
+            str += ", "+ queue[i];
+        }
+        str += "]";
 
-    @SuppressWarnings("unchecked")
-    public void reSize(int size) {
-        this.size = size;
-        T[] newQueue = (T[]) new Object[size];
-        System.arraycopy(queue, 0, newQueue, 0, size);
-        this.queue = newQueue;
-    }
-
-
-    public boolean isEmpty() {
-        return size == 0;
+        //One solution not advisable
+        //str = str.replace(", ]", "]");
+        return str;
     }
 }

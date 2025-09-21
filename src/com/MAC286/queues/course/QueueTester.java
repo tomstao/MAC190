@@ -1,5 +1,7 @@
 package com.MAC286.queues.course;
 
+import com.MAC286.queues.OurQueue;
+
 //Change this tester to make it work with our queue
 public class QueueTester {
     public static void main(String[] args) {

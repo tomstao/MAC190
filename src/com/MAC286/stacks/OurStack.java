@@ -39,7 +39,7 @@ public class OurStack <T>{
         //increment the size
         size++;
     }
-   public T pop(){
+    public T pop(){
         if(this.isEmpty()){
             throw new EmptyStackException();
         }
