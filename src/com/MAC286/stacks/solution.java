@@ -31,7 +31,7 @@ public class solution {
     }
 
     public static void reorganizeWithTwoStacks(OurStack<Integer> originalStack) {
-        System.out.println("Problem 2: Using two additional stacks");
+        System.out.println("Problem 2: two additional stacks");
         System.out.println("Original stack: " + originalStack);
 
         OurStack<Integer> positiveStack = new OurStack<>();
@@ -54,12 +54,12 @@ public class solution {
             originalStack.push(positiveStack.pop());
         }
 
-        System.out.println("Reorganized stack: " + originalStack);
+        System.out.println("organized stack: " + originalStack);
     }
 
-    public static void reorganizeWithQueueAndStack(OurStack<Integer> originalStack) {
-        System.out.println("Problem 3: Using one queue and one stack");
-        System.out.println("Original stack: " + originalStack);
+    public static void reorganizeWithQueueS_tack(OurStack<Integer> originalStack) {
+        System.out.println("Problem 3: Use one queue one stack");
+        System.out.println("Origina stack: " + originalStack);
 
         OurQueue<Integer> queue = new OurQueue<>();
         OurStack<Integer> tempStack = new OurStack<>();
@@ -86,12 +86,12 @@ public class solution {
             originalStack.push(tempStack.pop());
         }
 
-        System.out.println("Reorganized stack: " + originalStack);
+        System.out.println("organized stack: " + originalStack);
     }
 
     public static void reorganizeWithOnlyQueue(OurStack<Integer> originalStack) {
-        System.out.println("\nProblem 5: Using only one queue");
-        System.out.println("Original stack: " + originalStack);
+        System.out.println("Problem 5:Using one queue");
+        System.out.println("original stak: " + originalStack);
 
         OurQueue<Integer> queue = new OurQueue<>();
         int stackSize = originalStack.size();
@@ -134,7 +134,7 @@ public class solution {
         OurStack<Integer> copyStack5 = copyStack(stack1);
 
         reorganizeWithTwoStacks(stack1);
-        reorganizeWithQueueAndStack(copyStack3);
+        reorganizeWithQueueS_tack(copyStack3);
         reorganizeWithOnlyQueue(copyStack5);
     }
 
